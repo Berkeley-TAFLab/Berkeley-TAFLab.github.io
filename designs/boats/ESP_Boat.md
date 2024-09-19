@@ -1,7 +1,8 @@
 ---
 title: ESP Boat
 layout: default
-nav_order: 2
+parent: Designs
+nav_order: 1
 ---
 
 # ESP Boat
