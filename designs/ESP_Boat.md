@@ -1,14 +1,48 @@
 ---
-title: Home
-layout: home
-nav_order: 1
+title: ESP Boat
+layout: default
+nav_order: 2
 ---
 
-# Welcome!
+# ESP Boat
 
-This site will be used to document all the code and designs related to projects in the 
-Berkeley TAFLAB. This site is still currently under construction so please excuse its
-current layout. 
+## Description
+This iteration of the boat aims to use an ESP32 instead of an Arduino as 
+the microcontroller of choice. Furthermore, it is LiPo powered and includes a 
+new housing for the electronics. A GUI is used in order to monitor status and visualize
+data from the boat. 
+
+
+## Design Goals 
+The design of this particular boat aims to fulfill the following goals:
+1. Electronics, especially wiring, should be easier to manage and access. The usage 
+of Arduinos with jumpers leads to wires constantly getting pulled out 
+2. Power to the system should be delivered by a Lipo instead of the original powerbanks 
+to reduce cost. 
+3. The microcontroller being used to control these boats should be sufficiently powerful
+to manage all the functions it must achieve and for future development as more sensors
+are added. 
+4. Firmware should be structured cleanly for ease-of-edit and readability 
+5. Electronics should have their own isolated environment away from the water that we can 
+trust to be safe. 
+6. The design of the boat should be cheap, reliable, and easy to reproduce. 
+
+## Sensors
+In order for our boat to be autonomous we require the usage of different sensors to 
+collect environmental data. 
+1. AS5600 Magnetic Encoder - Used in windvane to calculate wind direction 
+2. 433 MHz RF Transmitter - Originally used for transmission of operator inputs. 
+Deprecated as we opted to use XBees due to the reliability of the Zigbee protocol
+as opposed to the protocol-less radios. 
+3. XBee Breakout - Used to allow boat to interface with Digi Xbee3 via UART and 
+connect to the rest of the mesh network. 
+4. MPU6050 IMU - 
+5. GTU-7 GPS - Used to track the latitude and longitude of our boat 
+6. LISMDL Magnetometer - Used to calculate heading which will be used to determine 
+the direction of the boat
+7. HW-038 Water Level Sensor - Used to determine if water has breached the boat 
+
+
 
 <!-- This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 
